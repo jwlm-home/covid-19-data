@@ -16,5 +16,11 @@ This repository reanalyzes the data using a set of low-degree smoothing splines.
 The base splines are computed once for deaths per capita and cases per capita,
 and the subsequent estimate of the rate of change is then computed as the derivative
 of that smoothed spline. The smoothed spline is computed using a penalized GAM
-which is constrianed to increase monotonically, thus guaranteeing positivity of
+which is constrained to increase monotonically, thus guaranteeing positivity of
 the derivatives at all points.
+
+The smoothed spline is computed using the pyGAM package (Servén D., Brummitt C. (2018). pyGAM: 
+Generalized Additive Models in Python. Zenodo. DOI: 10.5281/zenodo.1208723) and then reanalyzed
+using the Scikit-learn implementation of a univariate smoothing spline (Pedregosa, F., Varoquaux, Ga"el, 
+Gramfort, A., Michel, V., Thirion, B., Grisel, O., … others. (2011). Scikit-learn: Machine learning in Python.
+Journal of Machine Learning Research, 12(Oct), 2825–2830.)
